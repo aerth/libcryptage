@@ -5,7 +5,13 @@
 #define PUBKEY "age1mcka6j3umwgqklmcxsph4de0g7ar7wqnelxrgzytj4rfwc8pldrs3nu3qx"
 #define PRIVKEY "AGE-SECRET-KEY-1MKEHFSSMELSPTCZUYYKMZML5J6H7N7AJTRNMXQXQ60D8MHFLM37S0DR2KJ"
 
-int main(){
+int main(int argc, char** argv){
+    if (argc != 1) {
+      printf("libcryptage version: %s\n", libcryptage_version());
+      printf("        age version: %s\n", libcryptage_age_version());
+      printf("   x/crypto version: %s\n", libcryptage_xcrypto_version());
+      return 0;
+    }
     char* got = age_encrypt_armor(PUBKEY, "hello, libcryptage", 0);
     if (got == NULL) {
         printf("%s\n", ageerr());

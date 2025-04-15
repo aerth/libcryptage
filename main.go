@@ -19,6 +19,25 @@ import "C"
 
 func main() {}
 
+var (
+  version = "unknown" // set with -X
+  xcryptoversion string
+  ageversion string
+)
+
+//export libcryptage_age_version
+func libcryptage_age_version() *C.char {
+   return C.CString(ageversion)
+}
+//export libcryptage_xcrypto_version
+func libcryptage_xcrypto_version() *C.char {
+   return C.CString(xcryptoversion)
+}
+//export libcryptage_version
+func libcryptage_version() *C.char {
+   return C.CString(version)
+}
+
 var _cerr *C.char = nil
 var _ageerr error
 

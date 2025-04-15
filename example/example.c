@@ -11,7 +11,7 @@ int main(){
         printf("%s\n", ageerr());
         return 1;
     }
-    printf("encrypted: %s\n", got);
+    printf("encrypted:\n%s\n", got);
     char* dec = age_decrypt_armor(PRIVKEY, got, 0);
     if (dec == NULL) {
         printf("%s\n", ageerr());

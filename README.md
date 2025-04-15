@@ -1,17 +1,19 @@
 
 # libcryptage
 
-simple [age encryption](https://age-encryption.org/) for c/c++
+simple [age encryption](https://age-encryption.org/) for c/c++ programs
 
 # compile library
 
-create libcryptage.a, libcryptage.so, and a header file
+to create libcryptage.a, libcryptage.so, and a header file, run:
 
 ```
 make
 ```
 
 # usage
+
+to encrypt and decrypt medium size things:
 
 ```c
 #include <libcryptage.h>
@@ -44,3 +46,17 @@ int main(){
 
 ```
 
+the `example` program outputs something like:
+
+```
+encrypted:
+-----BEGIN AGE ENCRYPTED FILE-----
+YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoRmxIRlVodU0yVjVHWnln
+TW53NEtRVGM3cWwvNktMK2dCM3ZaREtoa2pFCjFDVFRpbVFqcnlNMTZxVUxyQkxx
+SmgwSTN3ZFVydkIxMXNSZ1g4T3ZRZlEKLS0tIE1KeFEvSmNJbldneHVrUlRTZVZm
+bTd3ZWhKSFNlbUhLN2U1ZHFETklYTFkKBZqX52r9mXsASgGaIGpjHnINBSSfzMg7
+2hi+tBJBJlHMicrowMRcg1KYS9gAFbpAwFY=
+-----END AGE ENCRYPTED FILE-----
+
+decrypted: hello, libcryptage
+```
